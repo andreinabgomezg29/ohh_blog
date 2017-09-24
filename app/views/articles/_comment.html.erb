@@ -1,5 +1,9 @@
 <div>
   <h4>Commentario por <%= comment.imageable.name %></h4>
+  <% if !comment.comment.nil? %>
+    <p class="comment">Re: <%= comment.comment.body %></p>
+  <% end %>
   <p class="comment"><%= comment.body %></p>
   <p>Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</p>
+  <%= link_to "Responder", new_answer_article_comment_path(@article, comment) %>
 </div>

@@ -1,0 +1,29 @@
+<%= link_to "<< Atras", public_index_articles_path %>
+<br>
+
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+<br>
+<h3>Comentario </h3>
+<div>
+  <h4>Commentario por <%= @comment.imageable.name %></h4>
+  <p class="comment"><%= @comment.body %></p>
+  <p>Posted <%= distance_of_time_in_words(@comment.article.created_at, @comment.created_at) %> later</p>
+</div>
+
+<h3>Agregar Respuesta</h3>
+
+<%= form_for @new_answer, as: :comment, url: create_answer_article_comment_path(@article, @comment), :method => :POST do |f| %>
+  <p>
+    <%= text_field_tag :name,nil, placeholder: "Nombre (si no es user)" %>
+    <br>
+    <br>
+    <%= text_field_tag :email,nil, placeholder: "Email (si no es user)" %>
+    <br>
+    <br>
+    <%= f.text_area :body, placeholder: "Comentario" %>
+  </p>
+  <p>
+    <%= f.submit 'Enviar' %>
+  </p>
+<% end %>

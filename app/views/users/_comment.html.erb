@@ -1,5 +1,8 @@
 <div>
   <h4>Commentario al articulo <%= comment.article.title%></h4>
+  <% if !comment.comment.nil? %>
+    <p class="comment">Re: <%= comment.comment.body %></p>
+  <% end %>
   <p class="comment"><%= comment.body %></p>
   <p>Fecha comentario: <%= comment.article.created_at.strftime("%m/%d/%y") %></p>
 </div>

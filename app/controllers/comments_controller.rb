@@ -33,11 +33,17 @@ class CommentsController < ApplicationController
       else
         @visit.update_attributes(email: params[:email])
       end
-      @comment_1 = Comment.find(params[:comment_id])
+      @comment_1 = Comment.find(params[:id])
       @comment = Comment.new(body: params[:comment][:body], imageable_id:@visit.id, imageable_type:"Visit", comment: @comment_1)
       @comment.article_id = params[:article_id]
       @comment.save
     end
     redirect_to  public_show_article_path(@comment.article)
+  end
+
+  def new_answer
+    @comment = Comment.find(params[:id])
+    @article = @comment.article
+    @new_answer = Comment.new
   end
 end

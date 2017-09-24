@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
     resources :comments do
       member do
+        get :new_answer
         post :create_answer
       end
     end
