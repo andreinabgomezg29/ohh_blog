@@ -1,0 +1,9 @@
+<h1>Visitas</h1>
+
+<ul>
+  <% @visits.each do |visit| %>
+    <li>
+      <%= link_to visit.name, visit_path(visit) %>
+    </li>
+  <% end %>
+</ul>

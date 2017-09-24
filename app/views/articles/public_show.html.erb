@@ -1,0 +1,8 @@
+<%= link_to "<< Atras", public_index_articles_path %>
+<br>
+
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+<%= render partial: 'comments/form' %>
+<h3>Comentarios (<%= @article.comments.size %>)</h3>
+<%= render partial: 'articles/comment', collection: @article.comments.reverse %>

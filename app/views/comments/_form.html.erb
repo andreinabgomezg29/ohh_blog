@@ -1,0 +1,16 @@
+<h3>Agregar un Comentario</h3>
+
+<%= form_for [ @article, @comment ] do |f| %>
+  <p>
+    <%= text_field_tag :name,nil, placeholder: "Nombre (si no es user)" %>
+    <br>
+    <br>
+    <%= text_field_tag :email,nil, placeholder: "Email (si no es user)" %>
+    <br>
+    <br>
+    <%= f.text_area :body, placeholder: "Comentario" %>
+  </p>
+  <p>
+    <%= f.submit 'Enviar' %>
+  </p>
+<% end %>

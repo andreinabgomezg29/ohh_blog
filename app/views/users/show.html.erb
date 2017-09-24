@@ -1,0 +1,6 @@
+<%= link_to "<< Atras", users_path %>
+
+<h1><%= @user.name %></h1>
+<p><%= @user.username %></p>
+<h3>Comentarios (<%= @user.comments.size %>)</h3>
+<%= render partial: 'users/comment', collection: @user.comments %>

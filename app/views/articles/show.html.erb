@@ -1,0 +1,9 @@
+<%= link_to "<< Atras", articles_path %>
+<br>
+<%= link_to "Editar", edit_article_path(@article) %>
+&nbsp;&nbsp;&nbsp;
+<%= link_to "Eliminar", article_path(@article), method: :delete, data: {confirm: "Realmente desea borrar el articulo?"} %>
+<br>
+
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>

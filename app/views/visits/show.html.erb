@@ -1,0 +1,6 @@
+<%= link_to "<< Atras", visits_path %>
+
+<h1><%= @visit.name %></h1>
+<p><%= @visit.email %></p>
+<h3>Comentarios (<%= @visit.comments.size %>)</h3>
+<%= render partial: 'users/comment', collection: @visit.comments %>
