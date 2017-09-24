@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-      username: 'user_example',
-      password: 'password',
-      name:"Andreina") if User.find_by_username('user_example').nil?
+    email: 'admin@example.com',
+    password: 'password',
+    password_confirmation: 'password',
+    name: "Andreina Gomez") if User.find_by_email('admin@example.com').nil?
